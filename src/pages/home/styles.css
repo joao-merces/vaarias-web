@@ -1,0 +1,22 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    gap: 50px;
+}
+
+.button {
+    background-color: #ff5056;
+    color: white; 
+    height: 36px;
+    width: 82px;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer; 
+}
+
+.btn:hover {
+    background-color: #ad2429;
+}
