@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../login/styles.css';
 import { useHistory } from 'react-router-dom';
@@ -7,31 +7,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [users, setUsers] = useState([]);
     const history = useHistory();
+
+    useEffect(() => {
+        fetchUsers();
+    }, []);
+
+    const fetchUsers = async () => {
+        try {
+            const response = await axios.get('http://localhost:8000/users');
+            setUsers(response.data);
+        } catch (error) {
+            console.error('Erro ao obter usuários:', error);
+        }
+    };
 
     const handleSignUpClick = () => {
         history.push('/signup');
     };
 
-    const handleLoginClick = async () => {
-        try {
-            const response = await axios.post('http://localhost:8000/users', {
-                email: email,
-                password: password
-            });
-    
-            // Verificar se o login foi bem-sucedido no backend
-            if (response.data.success) {
-                // Se o login for bem-sucedido, redirecione para a página principal
-                history.push('/');
-            } else {
-                // Se o login não for bem-sucedido, mostrar uma mensagem de erro para o usuário
-                console.error('Credenciais inválidas');
-                // Ou você pode definir um estado para mostrar uma mensagem de erro na interface do usuário
-            }
-        } catch (error) {
-            console.error('Erro ao fazer login:', error);
-            // Mostrar uma mensagem de erro genérica para o usuário
+    const handleLoginClick = () => {
+        const user = users.find(user => user.email === email && user.password === password);
+        if (user) {
+            console.log('Login bem-sucedido');
+            history.push('/');
+        } else {
+            console.error('Credenciais inválidas');
         }
     };
 
@@ -49,6 +51,7 @@ export const Login = () => {
                     placeholder='Email'
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className='input'
                 />
                 <input 
                     type="password" 
@@ -57,6 +60,7 @@ export const Login = () => {
                     placeholder='Senha'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    className='input'
                 />
                 <div className='button-container'>
                     <button className='button' onClick={handleSignUpClick}>Cadastrar</button>

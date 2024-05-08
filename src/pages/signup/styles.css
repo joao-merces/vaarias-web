@@ -30,7 +30,7 @@
     display: flex;
 }
 
-#input-name {
+.input-name {
     margin: 8px;
     border-radius: 8px;
     width: 210px;
@@ -68,7 +68,7 @@
     background-color: #ad2429;
 }
 
-#input {
+.input {
     margin: 8px;
     border-radius: 8px;
     width: 430px;
