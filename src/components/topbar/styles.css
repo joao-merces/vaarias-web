@@ -1,13 +1,10 @@
 .topbar {
-    background-color: #e0e0e0;
-
-    display: flex;
+    background-color: #ff5056;
+    display: flex; 
+    justify-content: center;
     align-items: center;
     padding: 10px;
     height: 46px;
-}
-
-.logo-container {
 }
 
 .search-container {
@@ -16,32 +13,40 @@
     justify-content: center;
 }
 
-.user-container {
+.search-container {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
     text-decoration: none;
-    color: #ff5056;
+    color: #ffffff;
     font-family: serif;
     font-size: 38px;
     align-items: start;
 }
 
 .search {
-    margin: 16px;
+    margin-right: -10px;
     border-radius: 6px;
     width: 320px;
     height: 32px;
     border-style: none;
-    align-items: center;
-    color: #f0f0f0;
+}
+
+.search-button {
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
 }
 
 
 .search:focus {
     outline: none;
 }
-
 .user-link {
     text-decoration: none;
     color: white;
@@ -54,13 +59,13 @@
     height: 30px;
     width: 30px;
     margin: 6px;
-    color: #ff5056;
+    color: #ffffff;
     align-items: center;
 }
 
 .user-name {
     font-size: 30px;
-    color: #ff5056;
+    color: #ffffff;
     text-decoration: none;
     align-items: center;
 }

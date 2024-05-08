@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     margin-top: 56px;
     gap: 50px;
+    margin-left: 200px;
 }
 
 .button {
@@ -17,6 +18,22 @@
     cursor: pointer; 
 }
 
-.btn:hover {
+.book {
+    border-color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 178;
+    width: 138;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.button:hover {
     background-color: #ad2429;
+}
+
+.book-cover {
+    height: 172px;
+    width: 132px;
 }
