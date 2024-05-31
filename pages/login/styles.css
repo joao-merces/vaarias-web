@@ -1,0 +1,64 @@
+.logo-login {
+    font-family: 'Times New Roman', Times, serif;
+    color: #ff5056;
+    font-size: 86px;
+}
+
+.welcome-text {
+    color: #ff5056;
+    font-weight: 800;
+}
+
+.box {
+    display: flex;
+    height: 100vh;
+}
+
+.left-box, .right-box {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.left-box {
+    background-color: #f0f0f0;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-box {
+    background-color: #e0e0e0;
+    align-items: center; 
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+}
+
+.button-container button {
+    margin-right: 10px;
+}
+
+.button {
+    background-color: #ff5056;
+    color: white; 
+    height: 36px;
+    width: 82px;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer; 
+}
+
+.btn:hover {
+    background-color: #ad2429;
+}
+
+.input {
+    margin: 8px;
+    border-radius: 8px;
+    width: 350px;
+    height: 34px;
+    border-style: none;
+    outline: none;
+}
